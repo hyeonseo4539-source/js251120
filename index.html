@@ -22,7 +22,15 @@
 
         greetButton.addEventListener('click', () => {
             const name = nameInput.value;
-            if (name) {
+            greetingMessage.innerHTML = ''; // Clear previous content
+
+            if (name === '카구라') {
+                const img = document.createElement('img');
+                img.src = 'https://upload3.inven.co.kr/upload/2023/09/19/bbs/i14928672166.png?MW=800';
+                img.style.maxWidth = '100%';
+                img.style.maxHeight = '300px';
+                greetingMessage.appendChild(img);
+            } else if (name) {
                 greetingMessage.textContent = `반갑습니다, ${name}님!`;
             } else {
                 greetingMessage.textContent = '이름을 입력해주세요.';
