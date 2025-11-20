@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="hearts-container"></div>
     <div class="container">
         <h1>안녕하세요!</h1>
         <p>이름을 입력하고 버튼을 누르세요.</p>
@@ -27,6 +28,16 @@
                 greetingMessage.textContent = '이름을 입력해주세요.';
             }
         });
+
+        const heartsContainer = document.querySelector('.hearts-container');
+        for (let i = 0; i < 15; i++) {
+            let heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.style.left = `${Math.random() * 100}vw`;
+            heart.style.animationDuration = `${2 + Math.random() * 3}s`;
+            heart.style.animationDelay = `${Math.random() * 2}s`;
+            heartsContainer.appendChild(heart);
+        }
     </script>
 </body>
 </html>
